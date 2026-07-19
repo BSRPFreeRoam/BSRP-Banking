@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BSRP Banking</title>
+    <style>html,body{background:transparent!important}</style>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body style="background:transparent!important">
+    <div id="app" class="hidden">
+        <div class="shell">
+            <div class="panel left">
+                <div class="edge edge-top"></div>
+                <div class="edge edge-bottom"></div>
+                <div class="corner c-tl"></div>
+                <div class="corner c-tr"></div>
+                <div class="corner c-bl"></div>
+                <div class="corner c-br"></div>
+                <div class="glow-bar"></div>
+
+                <div class="brand">
+                    <div class="badge"><span class="pulse-dot"></span> SECURE</div>
+                    <h1 id="bankName">FLEECA // BSRP</h1>
+                    <div class="tag" id="subtitle">SECURE LEDGER</div>
+                    <div class="brand-line"></div>
+                    <div class="chip">
+                        <span class="chip-label">ACCOUNT</span>
+                        <span class="chip-val" id="accName">—</span>
+                    </div>
+                    <div class="chip mode-chip">
+                        <span class="chip-label">TERMINAL</span>
+                        <span class="chip-val" id="modeLabel">BANK</span>
+                    </div>
+                </div>
+
+                <div class="balances">
+                    <div class="bal bank">
+                        <span class="bal-label">BANK</span>
+                        <span class="bal-val" id="bankBal">$0</span>
+                    </div>
+                    <div class="bal cash">
+                        <span class="bal-label">CASH</span>
+                        <span class="bal-val" id="cashBal">$0</span>
+                    </div>
+                </div>
+
+                <div class="left-actions">
+                    <button type="button" class="btn ghost" id="btnRefresh">REFRESH</button>
+                    <button type="button" class="btn danger" id="btnClose">CLOSE</button>
+                </div>
+            </div>
+
+            <div class="panel right">
+                <div class="edge edge-top"></div>
+                <div class="edge edge-bottom"></div>
+                <div class="corner c-tl"></div>
+                <div class="corner c-tr"></div>
+                <div class="corner c-bl"></div>
+                <div class="corner c-br"></div>
+                <div class="glow-bar"></div>
+
+                <div class="tabs">
+                    <button type="button" class="tab active" data-tab="deposit">DEPOSIT</button>
+                    <button type="button" class="tab" data-tab="withdraw">WITHDRAW</button>
+                    <button type="button" class="tab" data-tab="transfer">TRANSFER</button>
+                    <button type="button" class="tab" data-tab="history">HISTORY</button>
+                </div>
+
+                <div class="tab-pane active" id="tab-deposit">
+                    <div class="section-tag">CASH → BANK</div>
+                    <div class="quick" id="quickDeposit"></div>
+                    <label>AMOUNT</label>
+                    <input type="number" id="depAmount" min="1" placeholder="0" />
+                    <button type="button" class="btn primary" id="btnDeposit">CONFIRM DEPOSIT</button>
+                </div>
+
+                <div class="tab-pane" id="tab-withdraw">
+                    <div class="section-tag">BANK → CASH</div>
+                    <div class="quick" id="quickWithdraw"></div>
+                    <label>AMOUNT</label>
+                    <input type="number" id="wdAmount" min="1" placeholder="0" />
+                    <button type="button" class="btn primary" id="btnWithdraw">CONFIRM WITHDRAW</button>
+                </div>
+
+                <div class="tab-pane" id="tab-transfer">
+                    <div class="section-tag">WIRE TRANSFER</div>
+                    <label>TARGET SERVER ID</label>
+                    <input type="number" id="tfTarget" min="1" placeholder="Player ID" />
+                    <label>AMOUNT</label>
+                    <input type="number" id="tfAmount" min="1" placeholder="0" />
+                    <label>NOTE</label>
+                    <input type="text" id="tfNote" maxlength="48" placeholder="Optional note…" />
+                    <button type="button" class="btn primary" id="btnTransfer">SEND TRANSFER</button>
+                </div>
+
+                <div class="tab-pane" id="tab-history">
+                    <div class="section-tag">LEDGER</div>
+                    <div class="history fx-scroll" id="historyList">
+                        <div class="empty">No transactions yet</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
